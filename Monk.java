@@ -1,17 +1,30 @@
 package person;
 
-public class Monk {
-    String name;
-    int level;     //уровень: макс. hp, атака
-    int hp;
-    int maxHp;
-    int agility;      //ловкость
-    int power;        //сила
-    int defence;    //защита: 0 - нет,
-    int spirit;     //дух (выше дух - быстрее выздоровление)
-    int priority;      //влияет на очередность хода
+import behavior.CoordXY;
 
-    int mana;
-    int maxMana;
+public class Monk extends MagicianBase {
+
+    private static final int HEALTH = 600;
+    private static final int POWER = 40;     //    сила
+    private static final int AGILITY = 10;    //    ловкость
+    private static final int DEFENCE = 0;    //    защита: 0 - нет,
+    private static final int DISTANCE = 8;
+    private static final int MANA = 100;
+
+
+    public Monk(String name, CoordXY pos) {
+        super(name, 1, HEALTH, POWER, AGILITY, DEFENCE, DISTANCE, MANA, pos);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("[Монах] %s, life=%d, \uD83D\uDD25=%d, %S", name, health, mana, position.toString());
+    }
+
+    @Override
+    public String getInfo() {
+        return "Монах";
+    }
+
 
 }
