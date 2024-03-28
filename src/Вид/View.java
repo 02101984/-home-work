@@ -2,7 +2,6 @@ package view;
 
 import behavior.CoordXY;
 import person.PersonBase;
-import controller.Main;
 
 import java.util.Collections;
 
