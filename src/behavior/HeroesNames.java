@@ -3,8 +3,19 @@ package behavior;
 import java.util.Random;
 public class HeroesNames {
     private static Random rnd;
-    private static String[] names = {"Иван", "Антон", "Артём", "Ольга", "Светлана", "Лариса",
-            "Андрей", "Локи", "Тор", "Зевс", "Геракл", "Ахиллес", "Гектор"
+    private static String[] names = {"Иван",
+            "Антон",
+            "Артём",
+            "Ольга",
+            "Светлана",
+            "Лариса",
+            "Андрей",
+            "Локи",
+            "Тор",
+            "Зевс",
+            "Геракл",
+            "Ахиллес",
+            "Гектор"
     };
     static {
         rnd = new Random();
