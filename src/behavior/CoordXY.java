@@ -1,4 +1,4 @@
-package поведение;
+package behavior;
 
 /**
  *   Класс для позиционирования персонажей
@@ -23,7 +23,7 @@ public class CoordXY {
     }
 
     /*
-    *    Геттеры и сеттеры
+     *    Геттеры и сеттеры
      */
     public void setXY(int x, int y)
     {
@@ -36,6 +36,7 @@ public class CoordXY {
     }
 
     public int getY() {
+
         return curY;
     }
 
@@ -51,11 +52,13 @@ public class CoordXY {
 
     public static int getWidth()
     {
+
         return width;
     }
 
     public static int getHeight()
     {
+
         return height;
     }
 
@@ -72,6 +75,7 @@ public class CoordXY {
      * @return  true - если ход возможен
      */
     public boolean isMove(int x, int y)
+
     {
         return x >= 0 && x < width && y >= 0 && y < height;
     }
@@ -100,10 +104,10 @@ public class CoordXY {
      * @param to
      * @return
      */
-    public CoordXY getDelta(CoordXY to)
-    {
-        return new CoordXY(to.curX-curX, to.curY-curY);
-    }
+//    public CoordXY getDelta(CoordXY to)
+//    {
+//        return new CoordXY(to.curX-curX, to.curY-curY);
+//    }
 
     /**
      * Сравнение координат
@@ -112,11 +116,13 @@ public class CoordXY {
      */
     public boolean equal(CoordXY to)
     {
+
         return curX == to.curX && curY == to.curY;
     }
 
     public String toString()
     {
+
         return curX + ":" + curY;
     }
 }

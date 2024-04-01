@@ -1,7 +1,8 @@
 package view;
 
 import behavior.CoordXY;
-import person.PersonBase;
+import persona.PersonBase;
+import controller.Main;
 
 import java.util.Collections;
 
@@ -49,8 +50,8 @@ public class View {
                     out = "│" + (AnsyView.ANSI_RED + human.getInfo().charAt(1) + AnsyView.ANSI_RESET);
                     break;
                 }
-                if (controller.Main.greenPersons.contains(human)) out = "│" + (AnsyView.ANSI_GREEN + human.getInfo().charAt(1) + AnsyView.ANSI_RESET);
-                if (controller.Main.bluePersons.contains(human)) out = "│" + (AnsyView.ANSI_BLUE + human.getInfo().charAt(1) + AnsyView.ANSI_RESET);
+                if (Main.greenPersons.contains(human)) out = "│" + (AnsyView.ANSI_GREEN + human.getInfo().charAt(1) + AnsyView.ANSI_RESET);
+                if (Main.bluePersons.contains(human)) out = "│" + (AnsyView.ANSI_BLUE + human.getInfo().charAt(1) + AnsyView.ANSI_RESET);
                 break;
             }
         }
@@ -64,7 +65,7 @@ public class View {
             System.out.print(AnsyView.ANSI_RED + "Step:" + step + AnsyView.ANSI_RESET);
         }
         step++;
-        controller.Main.allPersons.forEach((v) -> maxLengthMsg = Math.max(maxLengthMsg, v.toString().length()));
+        Main.allPersons.forEach((v) -> maxLengthMsg = Math.max(maxLengthMsg, v.toString().length()));
         System.out.print("_".repeat(maxLengthMsg *2));
         System.out.println();
         System.out.print(top10 + "    ");
@@ -77,9 +78,9 @@ public class View {
             System.out.print(getChar(x, 0));        // old: System.out.print(getChar(0, x));
         }
         System.out.print("|    ");
-        System.out.print(controller.Main.bluePersons.get(0));
-        tabSetter(controller.Main.bluePersons.get(0).toString().length(), maxLengthMsg);
-        System.out.println(controller.Main.greenPersons.get(0));
+        System.out.print(Main.bluePersons.get(0));
+        tabSetter(Main.bluePersons.get(0).toString().length(), maxLengthMsg);
+        System.out.println(Main.greenPersons.get(0));
         System.out.println(midl10);
 
         for (int y = 1; y < 9; y++)
@@ -88,18 +89,18 @@ public class View {
                 System.out.print(getChar(x, y));    // old: System.out.print(getChar(y, x));
             }
             System.out.print("|    ");
-            System.out.print(controller.Main.bluePersons.get(y));
-            tabSetter(controller.Main.bluePersons.get(y).toString().length(), maxLengthMsg);
-            System.out.println(controller.Main.greenPersons.get(y));
+            System.out.print(Main.bluePersons.get(y));
+            tabSetter(Main.bluePersons.get(y).toString().length(), maxLengthMsg);
+            System.out.println(Main.greenPersons.get(y));
             System.out.println(midl10);
         }
         for (int x = 0; x < 10; x++) {
             System.out.print(getChar(x, 9));        // old: System.out.print(getChar(9, x));
         }
         System.out.print("|    ");
-        System.out.print(controller.Main.bluePersons.get(9));
-        tabSetter(controller.Main.bluePersons.get(9).toString().length(), maxLengthMsg);
-        System.out.println(controller.Main.greenPersons.get(9));
+        System.out.print(Main.bluePersons.get(9));
+        tabSetter(Main.bluePersons.get(9).toString().length(), maxLengthMsg);
+        System.out.println(Main.greenPersons.get(9));
         System.out.println(bottom10);
     }
 }

@@ -1,6 +1,6 @@
-package поведение;
+package behavior;
 
-import персона.PersonBase;
+import persona.PersonBase;
 
 import java.util.ArrayList;
 

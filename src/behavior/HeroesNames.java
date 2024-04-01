@@ -1,4 +1,4 @@
-package поведение;
+package behavior;
 
 import java.util.Random;
 public class HeroesNames {
@@ -19,6 +19,7 @@ public class HeroesNames {
 
     public static String getRandomName()
     {
+
         return names[rnd.nextInt(names.length)];
     }
 }
